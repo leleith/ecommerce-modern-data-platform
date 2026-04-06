@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta
-from faker import Faker
-import pandas as pd
-import numpy as np
 import random
 import uuid
+from datetime import datetime, timedelta
 
-
+import numpy as np
+import pandas as pd
+from faker import Faker
 
 CUSTOMER_STATUS_WEIGHTS: dict[str, float] = {
     "active": 0.82,
@@ -30,13 +29,7 @@ def _build_unique_email(
     last_name: str,
     used_emails: set[str],
 ) -> str:
-    base = (
-        f"{first_name}.{last_name}"
-        .lower()
-        .replace(" ", "")
-        .replace("'", "")
-        .replace('"', "")
-    )
+    base = f"{first_name}.{last_name}".lower().replace(" ", "").replace("'", "").replace('"', "")
 
     domain = random.choice(EMAIL_DOMAINS)
     email = f"{base}@{domain}"

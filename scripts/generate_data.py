@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import argparse
 
-from ecommerce_platform.synthetic.validators import validate_generated_data
+from ecommerce_platform.synthetic.config import GeneratorConfig
 from ecommerce_platform.synthetic.customers import generate_customers
 from ecommerce_platform.synthetic.products import generate_products
-from ecommerce_platform.synthetic.config import GeneratorConfig
+from ecommerce_platform.synthetic.validators import validate_generated_data
 
 
 def parse_args() -> argparse.Namespace:

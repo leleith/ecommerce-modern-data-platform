@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta
-import pandas as pd
-import numpy as np
 import random
 import uuid
+from datetime import datetime, timedelta
 
+import numpy as np
+import pandas as pd
 
 CATEGORY_PRODUCTS: dict[str, list[str]] = {
     "Electronics": [
@@ -92,7 +92,7 @@ BRANDS = [
 
 def _random_datetime_between(start_date: datetime, end_date: datetime) -> datetime:
     total_seconds = int((end_date - start_date).total_seconds())
-    
+
     if total_seconds <= 0:
         raise ValueError("end_date must be greater than start_date")
 
